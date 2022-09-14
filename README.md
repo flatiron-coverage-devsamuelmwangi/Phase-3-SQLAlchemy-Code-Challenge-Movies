@@ -19,6 +19,8 @@ start coding_. Remember to identify a single source of truth for your data.
 - Class and Instance Methods
 - SQLalchemy Querying
 
+***
+
 ## Instructions
 
 To get started, run `pipenv install` while inside of this directory.
@@ -50,6 +52,8 @@ your code to adhere to best practices.
 expect. If you have any methods that are not working yet, feel free to leave
 comments describing your progress.
 
+***
+
 ## What You Already Have
 
 The starter code has migrations and models for the initial `Actor` and `Movie`
@@ -71,6 +75,8 @@ like this:
 
 You will need to create the migration for the `roles` table using the attributes
 specified in the deliverables below.
+
+***
 
 ## Deliverables
 
@@ -128,7 +134,7 @@ appropriate (i.e. `has_many`, `has_many through`, and `belongs_to`).
 - `Actor#movies`
   - should return a collection of all the movies that the actor has performed in
 
-Use `rake console` and check that these methods work before proceeding. For
+Use `python debug.py` and check that these methods work before proceeding. For
 example, you should be able to call `Actor.first.movies` and see a list of the
 movies for the first actor in the database based on your seed data; and
 `Role.first.actor` should return the actor for the first role in the database.

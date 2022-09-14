@@ -10,7 +10,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-engine = create_engine('sqlite:///concerts.db', echo=True)
+engine = create_engine('sqlite:///movies.db', echo=True)
 
 class Roles(Base):
     pass
