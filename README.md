@@ -14,10 +14,10 @@ start coding_. Remember to identify a single source of truth for your data.
 
 ## Topics
 
-- SQLalchemy Migrations
-- SQLalchemy Relationships
+- SQLAlchemy Migrations
+- SQLAlchemy Relationships
 - Class and Instance Methods
-- SQLalchemy Querying
+- SQLAlchemy Querying
 
 ***
 
@@ -83,11 +83,8 @@ specified in the deliverables below.
 Write the following methods in the classes in the files provided. Feel free to
 build out any helper methods if needed.
 
-Deliverables use the notation `#` for instance methods, and `.` for class
-methods.
-
-Remember: SQLalchemy give your classes access to a lot of methods already!
-Keep in mind what methods SQLalchemy gives you access to on each of your
+Remember: SQLAlchemy give your classes access to a lot of methods already!
+Keep in mind what methods SQLAlchemy gives you access to on each of your
 classes when you're approaching the deliverables below.
 
 ### Migrations
@@ -110,65 +107,65 @@ deliverables.
 
 ### Object Relationship Methods
 
-Use SQLalchemy query methods where
-appropriate (i.e. `has_many`, `has_many through`, and `belongs_to`).
+Use SQLAlchemy query methods where
+appropriate.
 
 #### Role
 
-- `Role#actor`
+- `Role actor()`
   - should return the `Actor` instance for this role
-- `Role#movie`
+- `Role movie()`
   - should return the `Movie` instance for this role
 
 #### Movie
 
-- `Movie#roles`
+- `Movie roles()`
   - returns a collection of all the roles for the movie
-- `Movie#actors`
+- `Movie actors()`
   - returns a collection of all the actors who performed in the movie
 
 #### Actor
 
-- `Actor#roles`
+- `Actor roles()`
   - should return a collection of all the roles that the actor has played
-- `Actor#movies`
+- `Actor movies()`
   - should return a collection of all the movies that the actor has performed in
 
 Use `python debug.py` and check that these methods work before proceeding. For
-example, you should be able to call `Actor.first.movies` and see a list of the
+example, you should be able to call `session.query(Actor).first().movies` and see a list of the
 movies for the first actor in the database based on your seed data; and
-`Role.first.actor` should return the actor for the first role in the database.
+`session.query(Actor).first()` should return the actor for the first role in the database.
 
 ### Aggregate and Relationship Methods
 
 #### Role
 
-- `Role#credit`
+- `Role credit()`
   - should return a string formatted as follows:
     `{insert character name}: Played by {insert actor name}`
 
 #### Movie
 
-- `Movie#cast_role(actor, character_name, salary)`
+- `Movie cast_role(actor, character_name, salary)`
   - takes a `actor` (an instance of the `Actor` class), a `character_name`
     (string), and a `salary` (integer) as arguments, and creates a new `role` in
     the database associated with this movie and the actor
-- `Movie#all_credits`
+- `Movie all_credits()`
   - should return an Array of strings with all the roles for this movie
     formatted as follows:
     ["{insert character name}: Played by {insert actor name}", "{insert character name}: Played by {insert actor name}", ...]
-- `Movie#fire_actor(actor)`
+- `Movie fire_actor(actor)`
   - takes an `actor` (an instance of the `Actor` class) and removes their role from this movie
   - you will have to delete a row from the `roles` table to get this to work!
 
 #### Actor
 
-- `Actor#total_salary`
+- `Actor total_salary()`
   - returns the total salary for an actor based on the salary for each of their
     roles
-- `Actor#blockbusters`
+- `Actor blockbusters()`
   - returns a collection of all the `Movie` instances the actor has performed in
     that have a `box_office_earnings` of over $50,000,000
-- `Actor.most_successful`
+- `Actor most_successful() class method`
   - returns _one_ actor instance for the actor who has the highest total salary
     for all their roles
