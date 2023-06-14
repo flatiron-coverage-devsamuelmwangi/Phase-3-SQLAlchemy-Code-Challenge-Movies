@@ -173,7 +173,6 @@ movies for the first actor in the database based on your seed data; and
 # Solved
 ## Run Instructions
 - To get started, run `pipenv install && pipenv shell` while inside of root directory.
-- Run `alembic revision --autogenerate -m "Create tables"`
 - Run `alembic upgrade head`
 - Run `python seed.py`
 - Run `python debug.py`
