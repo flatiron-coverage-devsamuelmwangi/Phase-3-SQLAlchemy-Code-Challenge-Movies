@@ -3,7 +3,7 @@ import random
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import ipdb;
-
+from lib.models import Actor, Movie, Role
 
 if __name__ == '__main__':
     

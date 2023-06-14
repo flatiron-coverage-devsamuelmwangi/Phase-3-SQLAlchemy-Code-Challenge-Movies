@@ -176,3 +176,5 @@ movies for the first actor in the database based on your seed data; and
 - Run `alembic revision --autogenerate -m "Create tables"`
 - Run `alembic upgrade head`
 - Run `python seed.py`
+- Run `python debug.py`
+- Run `session.query(Actor).first()` (Should return `Actor: Actor 1`)
