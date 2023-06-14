@@ -23,7 +23,7 @@ start coding_. Remember to identify a single source of truth for your data.
 
 ## Instructions
 
-To get started, run `pipenv install` while inside of this directory.
+To get started, run `pipenv install && pipenv shell` while inside of this directory.
 
 Build out all of the methods listed in the deliverables. The methods are listed
 in a suggested order, but you can feel free to tackle the ones you think are
@@ -169,3 +169,10 @@ movies for the first actor in the database based on your seed data; and
 - `Actor most_successful() class method`
   - returns _one_ actor instance for the actor who has the highest total salary
     for all their roles
+
+# Solved
+## Run Instructions
+- To get started, run `pipenv install && pipenv shell` while inside of root directory.
+- Run `alembic revision --autogenerate -m "Create tables"`
+- Run `alembic upgrade head`
+- Run `python seed.py`
